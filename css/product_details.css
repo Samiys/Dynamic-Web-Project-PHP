@@ -1,0 +1,123 @@
+.products{
+    height: 300px;
+    width: auto;
+}
+#p2
+{
+    height: 250px;
+    margin-top: 30px;
+}
+#p5
+{
+    height: 270px;
+    padding: 10px;
+    margin-top: 20px;
+}
+#p6
+{
+    margin-top: 15px;
+    padding: 10px;
+}
+.pHeading
+{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 30px;
+    color: rgb(187, 93, 15);
+    font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 32px;
+}
+.pDetailsHeading
+{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: rgb(121, 66, 21);
+    font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+.card
+{
+    border:none;
+    height: 330px;
+    box-shadow: 0 0 10px 0 rgba(100, 100, 100, 0.411);
+    transform: translateZ(0);
+    margin: 15px;
+    margin-bottom: 20px;
+}
+.pInfo
+{
+    font-size: 30px;
+    margin-top: 30px;
+    margin-left: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.pInfo p
+{
+    margin: 0px;
+}
+.pInfoHeading
+{
+    float: left;
+    padding-right: 7px;
+    font-weight: bold;
+    opacity: 0.9;
+}
+.pInfo li
+{
+    display: block;
+}
+.money
+{
+    opacity: 0.8;
+    color: red;
+}
+.code
+{
+    opacity: 0.9;
+    color: rgb(53, 48, 48);
+}
+.stock
+{
+    color: blue;
+    opacity: 0.9;
+}
+
+#p2dis,#p3dis,#p6dis
+{
+    color: rgba(92, 63, 17, 0.87);
+    font-weight: bold;
+}
+#p3stock
+{
+    color: tomato;
+}
+@media only screen and (max-width: 768px) 
+{
+    .pInfo
+    {
+        font-size: 6.3vw;
+        margin-left: 8px;
+    }
+    .pHeading
+    {
+        font-size: 7vw;
+    }
+    #p2
+    {
+        height: 180px;
+    }   
+    #p2img
+    {
+        height: 250px;
+    }
+    #p5
+    {
+        height: 230px;
+    }
+    #p5img
+    {
+        height: 260px;
+    }
+}
