@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93955822-5036-40d1-9c8f-a5ab1dbce163" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Dynamic Web presentation.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dynamic.sql" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/includes/config.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/includes/scripts.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/uploads/1590690600-front-end-back-end-1080x608.png" afterDir="false" />
@@ -27,6 +29,7 @@
       <change afterPath="$PROJECT_DIR$/uploads/frontend.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/uploads/product-135-781070.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Video.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Project Video.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/about-us.html" beforeDir="false" afterPath="$PROJECT_DIR$/about-us.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contact-us.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact-us.php" afterDir="false" />
@@ -97,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620157843712</updated>
-      <workItem from="1620157844919" duration="28797000" />
+      <workItem from="1620157844919" duration="29700000" />
     </task>
     <servers />
   </component>

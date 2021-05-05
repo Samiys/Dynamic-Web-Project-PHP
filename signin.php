@@ -5,6 +5,18 @@ include('includes/config.php');
 
 //unset($_SESSION);
 
+if (isset($_SESSION['loginCount']))
+{
+    $_SESSION['loginCount']++;
+    if ($_SESSION['loginCount'] > 3)
+    {
+        echo 'You are Locked!!!';
+        exit;
+    }
+} else {
+    $_SESSION['loginCount'] = 1;
+}
+
 if(isset($_POST['submit'])) {
 
     $email=$_POST['email'];
