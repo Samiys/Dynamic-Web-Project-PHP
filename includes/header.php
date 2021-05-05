@@ -1,3 +1,6 @@
+<?php
+error_reporting(0);
+?>
 <!-- Header START -->
 <header class="bg-light" style="width: 100%;">
     <div class="container">
@@ -45,6 +48,18 @@
                                 <span class="nav-link" onclick="myContact()">Contact Us</span>
                             </li>
                         </ul>
+                        <?php
+                        if(strlen($_SESSION['login'])>0)
+                        { ?>
+                            <ul class="navbar-nav" style="float: right">
+                                <li class="nav-item active">
+                                    <a class="nav-link" style="float: right"><?php echo $_SESSION['username'] ?></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="float: right" href="./logout.php">Logout</a>
+                                </li>
+                            </ul>
+                        <?php } ?>
                     </div>
                 </nav>
             </div>

@@ -1,33 +1,23 @@
 <?php
 session_start();
 include('includes/config.php');
-//if(strlen($_SESSION['alogin'])==0)
-//	{
-//header('location:index1.php');
-//}
-//else{
 
+if(strlen($_SESSION['login'])==0)
+{
+    header('location:signin.php');
+}
+$getId = $_GET['id'];
 if(isset($_POST['submit']))
 {
     $pname = $_POST['pname'];
-    $pimage = $_FILES["pimage"]["name"];
+    $productname=$_POST['pname'];
+    $productimage=$_FILES["pimage"]["name"];
+    move_uploaded_file($_FILES["pimage"]["tmp_name"],"uploads/$getId/".$_FILES["pimage"]["name"]);
 
-//for getting product id and storing image
-    $query=mysqli_query($con,"select max(id) as pid from products");
-    $result=mysqli_fetch_array($query);
-    $productid=$result['pid']+1;
-    $dir="uploads/$productid";
-
-    if(!is_dir($dir)){
-        mkdir("uploads/". $productid);
-    }
-
-    move_uploaded_file($_FILES["pimage"]["tmp_name"],"uploads/$productid/".$_FILES["pimage"]["name"]);
-
-    $sql=mysqli_query($con,"insert into products(pname,user_id, pimage) values('$pname',1,'$pimage')");
+    $sql=mysqli_query($con,"update products set pname='$pname', user_id=1, pimage='$productimage' where id = '$getId'");
 
     if ($sql > 0 ) {
-        $_SESSION['msg'] = "Product Inserted Successfully !!";
+        $_SESSION['msg'] = "Product Updated Successfully !!";
     }
 
 }
@@ -55,7 +45,7 @@ if(isset($_POST['submit']))
     </div>
 <?php } ?>
 
-<div class="container">
+<div class="container" style="margin-bottom: 10%">
     <div class="row">
         <div class="col-md-12">
             <h1>Edit Product</h1>
@@ -63,25 +53,35 @@ if(isset($_POST['submit']))
     </div>
 
     <br>
+
+    <?php $query=mysqli_query($con,"select * from products where id = '$getId'");
+    $row = mysqli_fetch_array($query);
+    ?>
     <form method="post" enctype="multipart/form-data">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3 alert alert-info">
                 <div class="form-group">
-                    <label>Product Name</label>
-                    <input type="text" class="form-control" id="pname" name="pname" placeholder="Enter name" required>
+                    <label>Product Name</label>s
+                    <input type="text" class="form-control" id="pname" name="pname" value="<?php echo $row['pname'] ?>" required>
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 alert alert-info">
                 <div class="form-group pl-5">
-                    <label for="exampleFormControlFile1">Upload Image</label>
+                    <label for="exampleFormControlFile1" class="pl-5">Upload Image</label>
                     <input type="file" class="form-control-file" id="pimage" name="pimage" required>
                 </div>
             </div>
+
+            <div class="col-md-4 alert alert-info">
+                <img src="uploads/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['pimage']);?>" width="200" height="200">
+            </div>
+
+
         </div>
 
         <div class="controls">
-            <button type="submit" name="submit" class="btn">Insert</button>
+            <button type="submit" name="submit" class="btn">Update</button>
         </div>
 
     </form>
@@ -91,4 +91,3 @@ if(isset($_POST['submit']))
 <?php include 'includes/scripts.php';?>
 </body>
 </html>
-<?php //} ?>

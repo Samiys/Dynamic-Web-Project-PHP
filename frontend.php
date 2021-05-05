@@ -1,3 +1,7 @@
+<?php
+session_start();
+include('includes/config.php');
+?>
 <!doctype html>
 <html lang="en">
 
@@ -57,34 +61,33 @@
                 <div class="col-12">
                     <h1 class="heading " id="intro_heading">Introduction</h1>
                     <p class="text-justify" id="intro_text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                            Molestiae fuga animi eius ea voluptatem blanditiis odio 
-                                            ut in eligendi odit, autem, aliquid harum? Libero quos, 
+                                            Molestiae fuga animi eius ea voluptatem blanditiis odio
+                                            ut in eligendi odit, autem, aliquid harum? Libero quos,
                                             veniam eveniet dicta laudantium molestiae. Lorem ipsum dolor
                                             sit amet consectetur adipisicing elit. Aspernatur voluptates
-                                            veritatis officia in nam nesciunt ex deserunt earum architecto 
-                                            iusto quaerat provident rem delectus, eius reprehenderit error 
-                                            minima pariatur possimus reiciendis eaque amet dignissimos? 
+                                            veritatis officia in nam nesciunt ex deserunt earum architecto
+                                            iusto quaerat provident rem delectus, eius reprehenderit error
+                                            minima pariatur possimus reiciendis eaque amet dignissimos?
                                             Culpa voluptate ducimus in voluptatem possimus.
                     </p>
                 </div>
             </div>
+
+
             <h1 class="heading" id="product_heading">Latest products</h1><br><br>
-            <div class="row"> 
+            <div class="row">
+                <?php $query=mysqli_query($con,"select * from products");
+                while($row = mysqli_fetch_array($query)) {
+//                    $join = mysqli_query($con, "SELECT users.name AS usrname FROM users INNER JOIN products ON users.id = '".$row['id']."'");
+//                    echo ($join);
+                    ?>
                 <div class="col-6 col-md-4">
-                    <img id="p1" class="img-fluid products mx-auto d-block img-rounded" src="img/products/Tablet.jpg" alt="Lenovo Tab" onclick="myProductDetails1()">
-                    <p class="text-center pHeading" onclick="myProductDetails1()">
-                        Lenovo Tab M8 Tablet
-                    </p>
+                    <img class="img-fluid products mx-auto d-block img-rounded" src="uploads/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['pimage']);?>">
+<!--                    <img id="p1" class="img-fluid products mx-auto d-block img-rounded" src="img/products/Tablet.jpg" alt="Lenovo Tab" onclick="myProductDetails1()">-->
+                    <p class="text-center pHeading" onclick="myProductDetails1()"><?php echo $row['pname'] ?></p>
+                    <p class="text-center" style="margin-top: -25px;"><small><strong>Seller: </strong><?php echo $row['pname'] ?></small></p>
                 </div>
-                <div class="col-6 col-md-4">
-                    <img id="p2" class="img-fluid products mx-auto d-block img-rounded" src="img/products/laptop.jpg" alt="Acer Laptop" onclick="myProductDetails2()">
-                    <p class="text-center pHeading" onclick="myProductDetails2()">Acer Aspire 5 Slim Laptop
-                    </p>
-                </div>
-                <div class="col-6 col-md-4">
-                    <img id="p3" class="img-fluid products mx-auto d-block img-rounded" src="img/products/ps5.jpg" alt="PS5 Console" onclick="myProductDetails3()">
-                    <p class="text-center pHeading" onclick="myProductDetails3()">PlayStation 5 Console</p>
-                </div>
+                <?php }?>
             </div>
         </div>
       </div>

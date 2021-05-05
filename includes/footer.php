@@ -1,7 +1,5 @@
-
-
 <!-- Footer START -->
-<div class="site-footer" id="footer">
+<div class="site-footer">
     <div style="background-color: #26272b;">
         <div class="container">
             <div class="row">
@@ -37,7 +35,7 @@
             <div class="row">
                 <div class="col-md-8 col-sm-6 col-xs-12">
                     <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
-                        <a href="#">Sami Zain Faisal</a>.
+                        <a href="#">Sami</a>.
                     </p>
                 </div>
 

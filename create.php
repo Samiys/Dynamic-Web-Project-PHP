@@ -1,11 +1,11 @@
 <?php
 session_start();
 include('includes/config.php');
-//if(strlen($_SESSION['alogin'])==0)
-//	{
-//header('location:index1.php');
-//}
-//else{
+
+if(strlen($_SESSION['login'])==0)
+{
+    header('location:signin.php');
+}
 
 if(isset($_POST['submit']))
 {
@@ -27,8 +27,10 @@ if(isset($_POST['submit']))
     $sql=mysqli_query($con,"insert into products(pname,user_id, pimage) values('$pname',1,'$pimage')");
 
     if ($sql > 0 ) {
-        $_SESSION['msg'] = "Product Inserted Successfully !!";
+        $_SESSION['added'] = "Product Inserted Successfully !!";
+        header("location:show-products.php?added='".$_SESSION['added']. "'");
     }
+
 
 }
 ?>
@@ -55,7 +57,7 @@ if(isset($_POST['submit']))
     </div>
 <?php } ?>
 
-<div class="container">
+<div class="container" style="padding-bottom: 80px">
     <div class="row">
         <div class="col-md-12">
             <h1>Add Product</h1>
@@ -75,13 +77,13 @@ if(isset($_POST['submit']))
             <div class="col-md-4">
                 <div class="form-group pl-5">
                     <label for="exampleFormControlFile1">Upload Image</label>
-                    <input type="file" class="form-control-file" id="pimage" name="pimage" required>
+                    <input type="file" class="form-control-file" id="pimage" name="pimage" accept="image/jpeg, image/jpg" required>
                 </div>
             </div>
         </div>
 
         <div class="controls">
-            <button type="submit" name="submit" class="btn">Insert</button>
+            <button type="submit" name="submit" class="btn btn-primary">Add</button>
         </div>
 
     </form>

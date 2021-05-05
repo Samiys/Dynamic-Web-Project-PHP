@@ -1,16 +1,11 @@
 <?php
 session_start();
 include('includes/config.php');
-//if(strlen($_SESSION['alogin'])==0)
-//	{
-//header('location:index1.php');
-//}
-//else{
 
-
-
-
-
+if(strlen($_SESSION['login'])==0)
+	{
+header('location:signin.php');
+}
 ?>
 
 <!doctype html>
@@ -28,54 +23,19 @@ include('includes/config.php');
 <?php include 'includes/header.php';?>
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1>All Products</h1>
+<div class="container pb-5">
+
+    <div class="row pt-4">
+        <div class="col-md-6">
+            <h1><a href="create.php">Add Product</a></h1>
+            <a href="create.php"><img src="uploads/add-product-4-837051.png" height="400" width="400"></a>
+        </div>
+        <div class="col-md-6">
+            <h1><a href="show-products.php">View Your Products</a></h1>
+            <a href="show-products.php"><img src="uploads/product-135-781070.png" height="400" width="400"></a>
         </div>
     </div>
-    <br>
-    <?php $query=mysqli_query($con,"select * from products");
-    $count=1;
-    while($row = mysqli_fetch_array($query)) {
-        $pid = $row['id'] +1;
-    ?>
-
-        <table class="table">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Product Name</th>
-                <th>Image</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td><?php echo $count ?></td>
-                <td><?php echo $row['pname'] ?></td>
-                <td>
-                    <img src="uploads/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['pimage']);?>" width="200" height="200">
-<!--                    <a href="update-image1.php?id=--><?php //echo $row['id'];?><!--">Change Image</a>-->
-
-                </td>
-                <td class="table-actions">
-                    <a href="" class="table-action" data-toggle="tooltip" data-original-title="Edit product">
-                        <i class="far fa-user-edit"></i>
-                    </a>
-                    <a href="" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
-                        <i class="far fa-trash"></i>
-                    </a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-
-    <?php
-    $count += 1;
-    } ?>
 </div>
-
 <?php include 'includes/footer.php';?>
 <?php include 'includes/scripts.php';?>
 </body>
