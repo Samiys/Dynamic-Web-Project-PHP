@@ -80,12 +80,10 @@ include('includes/config.php');
                 while($row = mysqli_fetch_array($query)) {
                     ?>
                 <div class="col-6 col-md-4">
-                    <img class="img-fluid products mx-auto d-block img-rounded" src="uploads/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['pimage']);?>">
+                    <img class="img-fluid products mx-auto d-block img-rounded" src="uploads/<?php echo htmlentities($row['pimage']);?>">
 <!--                    <img id="p1" class="img-fluid products mx-auto d-block img-rounded" src="img/products/Tablet.jpg" alt="Lenovo Tab" onclick="myProductDetails1()">-->
                     <p class="text-center pHeading" onclick="myProductDetails1()"><?php echo $row['pname'] ?></p>
-
 <!--                    <p class="text-center" style="margin-top: -25px;"><small><strong>Seller: </strong>--><?php //echo $user['name'] ?><!--</small></p>-->
-
                 </div>
                 <?php }?>
             </div>

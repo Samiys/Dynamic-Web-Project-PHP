@@ -15,16 +15,16 @@ if(isset($_POST['submit']))
 //for getting product id and storing image
     $query=mysqli_query($con,"select max(id) as pid from products");
     $result=mysqli_fetch_array($query);
-    $productid=$result['pid']+1;
-    $dir="uploads/$productid";
+    $productid = $result['pid']+1;
+//    $dir="uploads/$productid";
 
-    if(!is_dir($dir)){
-        mkdir("uploads/". $productid);
-    }
+//    if(!is_dir($dir)){
+//        mkdir("uploads/". $productid);
+//    }
 
-    move_uploaded_file($_FILES["pimage"]["tmp_name"],"uploads/$productid/".$_FILES["pimage"]["name"]);
+    move_uploaded_file($_FILES["pimage"]["tmp_name"],"uploads/".$_FILES["pimage"]["name"]);
 
-    $sql=mysqli_query($con,"insert into products(pname,user_id, pimage) values('$pname',1,'$pimage')");
+    $sql=mysqli_query($con,"insert into products(pname,user_id, pimage) values('$pname','".$_SESSION['id']."','$pimage')");
 
     if ($sql > 0 ) {
         $_SESSION['added'] = "Product Inserted Successfully !!";

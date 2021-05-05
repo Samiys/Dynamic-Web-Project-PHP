@@ -72,7 +72,7 @@ if(isset($_GET['del']))
                 <td><?php echo $count ?></td>
                 <td><?php echo $row['pname'] ?></td>
                 <td>
-                    <img src="uploads/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['pimage']);?>" width="200" height="200">
+                    <img src="uploads/<?php echo htmlentities($row['pimage']);?>" width="200" height="200">
                     <!--                    <a href="update-image1.php?id=--><?php //echo $row['id'];?><!--">Change Image</a>-->
 
                 </td>

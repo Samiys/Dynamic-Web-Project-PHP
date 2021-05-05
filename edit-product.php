@@ -12,7 +12,7 @@ if(isset($_POST['submit']))
     $pname = $_POST['pname'];
     $productname=$_POST['pname'];
     $productimage=$_FILES["pimage"]["name"];
-    move_uploaded_file($_FILES["pimage"]["tmp_name"],"uploads/$getId/".$_FILES["pimage"]["name"]);
+    move_uploaded_file($_FILES["pimage"]["tmp_name"],"uploads/".$_FILES["pimage"]["name"]);
 
     $sql=mysqli_query($con,"update products set pname='$pname', user_id=1, pimage='$productimage' where id = '$getId'");
 
@@ -74,7 +74,7 @@ if(isset($_POST['submit']))
             </div>
 
             <div class="col-md-4 alert alert-info">
-                <img src="uploads/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['pimage']);?>" width="200" height="200">
+                <img src="uploads/<?php echo htmlentities($row['pimage']);?>" width="200" height="200">
             </div>
 
 
