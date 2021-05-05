@@ -31,7 +31,7 @@ if(isset($_GET['del']))
 
 <?php if(isset($_GET['added']))
 {?>
-    <div class="alert alert-success">
+    <div class="alert alert-primary">
         <button type="button" class="close" data-dismiss="alert">×</button>
         <strong><?php echo htmlentities($_SESSION['added']);?><?php echo htmlentities($_SESSION['added']="");?>
     </div>

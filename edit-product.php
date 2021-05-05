@@ -39,7 +39,7 @@ if(isset($_POST['submit']))
 
 <?php if(isset($_POST['submit']))
 {?>
-    <div class="alert alert-success">
+    <div class="alert alert-primary">
         <button type="button" class="close" data-dismiss="alert">×</button>
         <strong><?php echo htmlentities($_SESSION['msg']);?><?php echo htmlentities($_SESSION['msg']="");?>
     </div>

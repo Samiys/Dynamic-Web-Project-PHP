@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2021 at 07:30 PM
+-- Generation Time: May 05, 2021 at 08:16 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -41,8 +41,7 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`id`, `user_id`, `pname`, `pimage`) VALUES
 (6, 1, 'Aqua Phone', 'download.jfif'),
 (7, 4, 'Laptop', 'SwanSept9.61_2.1497991318.jpg'),
-(8, 5, 'Transparent Phone', '44d2d8975e6ed13e0358a72b866bd354.jpg'),
-(30, 1, 'Mobile 321', 'samsung-galaxy-zero-0094-990x535.jpg');
+(8, 5, 'Transparent Phone', '44d2d8975e6ed13e0358a72b866bd354.jpg');
 
 -- --------------------------------------------------------
 

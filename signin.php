@@ -5,17 +5,7 @@ include('includes/config.php');
 
 //unset($_SESSION);
 
-if (isset($_SESSION['loginCount']))
-{
-    $_SESSION['loginCount']++;
-    if ($_SESSION['loginCount'] > 3)
-    {
-        echo 'You are Locked!!!';
-        exit;
-    }
-} else {
-    $_SESSION['loginCount'] = 1;
-}
+
 
 if(isset($_POST['submit'])) {
 
@@ -35,8 +25,22 @@ if(isset($_POST['submit'])) {
     else {
         $extra="login.php";
         $email=$_POST['email'];
-        header("location:signin.php");
+
+        if (isset($_SESSION['loginCount']))
+        {
+            $_SESSION['loginCount']++;
+            ?><script>alert(<?php echo $_SESSION['loginCount'] ?>)</script><?php
+            if ($_SESSION['loginCount'] > 2)
+            {
+                echo 'You are Locked!!!';
+                exit;
+            }
+        } else {
+            $_SESSION['loginCount'] = 1;
+        }
+
         $_SESSION['errmsg'] = "Invalid email id or Password";
+        header("location:signin.php?errmsg='".$_SESSION['errmsg']."'");
         exit();
     }
 }
@@ -56,15 +60,15 @@ if(isset($_POST['submit'])) {
 
 <?php if(isset($_GET['success']))
 {?>
-    <div class="alert alert-success">
+    <div class="alert alert-primary">
         <button type="button" class="close" data-dismiss="alert">×</button>
         <strong><?php echo htmlentities($_SESSION['success']);?><?php echo htmlentities($_SESSION['success']="");?>
     </div>
 <?php } ?>
 
-<?php if(isset($_SESSION['errmsg']))
+<?php if(isset($_GET['errmsg']))
 {?>
-    <div class="alert alert-danger">
+    <div class="alert alert-warning">
         <button type="button" class="close" data-dismiss="alert">×</button>
         <strong><?php echo htmlentities($_SESSION['errmsg']);?><?php echo htmlentities($_SESSION['errmsg']="");?>
     </div>
@@ -72,7 +76,7 @@ if(isset($_POST['submit'])) {
 
 <?php if(isset($_GET['logout']))
 {?>
-    <div class="alert alert-danger">
+    <div class="alert alert-primary">
         <button type="button" class="close" data-dismiss="alert">×</button>
         <strong><?php echo htmlentities($_SESSION['logout']);?><?php echo htmlentities($_SESSION['logout']="");?>
     </div>
