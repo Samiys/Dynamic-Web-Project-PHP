@@ -7,28 +7,10 @@ include('includes/config.php');
 //}
 //else{
 
-if(isset($_POST['submit']))
-{
-	$pname = $_POST['pname'];
-	$pimage = $_FILES["pimage"]["name"];
 
-//for getting product id
-$query=mysqli_query($con,"select max(id) as pid from products");
-	$result=mysqli_fetch_array($query);
-	 $productid=$result['pid']+1;
-	$dir="uploads/$productid";
 
-if(!is_dir($dir)){
-		mkdir("uploads/". $productid);
-	}
 
-	move_uploaded_file($_FILES["pimage"]["tmp_name"],"uploads/$productid".$_FILES["pimage"]["name"]);
 
-$sql=mysqli_query($con,"insert into products(pname,user_id, image) values('$pname',1,'$pimage')");
-
-$_SESSION['msg']="Product Inserted Successfully !!";
-
-}
 ?>
 
 <!doctype html>
@@ -45,44 +27,53 @@ $_SESSION['msg']="Product Inserted Successfully !!";
 <body>
 <?php include 'includes/header.php';?>
 
-<?php if(isset($_POST['submit']))
-{?>
-    <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss="alert">×</button>
-        <strong>Well done!</strong>	<?php echo htmlentities($_SESSION['msg']);?><?php echo htmlentities($_SESSION['msg']="");?>
-    </div>
-<?php } ?>
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Add Product</h1>
+            <h1>All Products</h1>
         </div>
     </div>
-
     <br>
-    <form method="post" enctype="multipart/form-data">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="form-group">
-                    <label>Product Name</label>
-                    <input type="text" class="form-control" id="pname" name="pname" placeholder="Enter name" required>
-                </div>
-            </div>
+    <?php $query=mysqli_query($con,"select * from products");
+    $count=1;
+    while($row = mysqli_fetch_array($query)) {
+        $pid = $row['id'] +1;
+    ?>
 
-            <div class="col-md-4">
-                <div class="form-group pl-5">
-                    <label for="exampleFormControlFile1">Upload Image</label>
-                    <input type="file" class="form-control-file" id="pimage" name="pimage" required>
-                </div>
-            </div>
-        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Product Name</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><?php echo $count ?></td>
+                <td><?php echo $row['pname'] ?></td>
+                <td>
+                    <img src="uploads/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['pimage']);?>" width="200" height="200">
+<!--                    <a href="update-image1.php?id=--><?php //echo $row['id'];?><!--">Change Image</a>-->
 
-        <div class="controls">
-            <button type="submit" name="submit" class="btn">Insert</button>
-        </div>
+                </td>
+                <td class="table-actions">
+                    <a href="" class="table-action" data-toggle="tooltip" data-original-title="Edit product">
+                        <i class="far fa-user-edit"></i>
+                    </a>
+                    <a href="" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
+                        <i class="far fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-    </form>
+    <?php
+    $count += 1;
+    } ?>
 </div>
 
 <?php include 'includes/footer.php';?>
