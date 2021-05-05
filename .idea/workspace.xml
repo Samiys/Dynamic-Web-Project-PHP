@@ -5,7 +5,6 @@
       <change afterPath="$PROJECT_DIR$/includes/config.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/includes/scripts.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/show-products.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/signup.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/uploads/10/samsung-galaxy-zero-0094-990x535.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/uploads/11/samsung-galaxy-zero-0094-990x535.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/uploads/14/SwanSept9.61_2.1497991318.jpg" afterDir="false" />
@@ -44,6 +43,7 @@
       <change beforePath="$PROJECT_DIR$/js/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/signin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/signup.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620157843712</updated>
-      <workItem from="1620157844919" duration="25353000" />
+      <workItem from="1620157844919" duration="26121000" />
     </task>
     <servers />
   </component>

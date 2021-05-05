@@ -33,11 +33,21 @@ if(isset($_POST['submit'])) {
 </head>
 <body>
 <?php include 'includes/partial-header.php';?>
-<div class="container">
+
+<!-- ERRORS START -->
+<div class="alert alert-warning alert-dismissible" id="errors" role="alert" hidden>
+    <strong id="error-text"></strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<!-- ERRORS END -->
+
+<div class="container pb-5">
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-8 col-xl-6">
             <div class="row">
-                <form method="post" name="register">
+                <form method="post" name="register" onsubmit = "return validation();">
                     <div class="col text-center">
                         <h1>Register</h1>
                         <p class="text-h3">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia. </p>
@@ -81,5 +91,28 @@ if(isset($_POST['submit'])) {
 </div>
 <?php include 'includes/footer.php';?>
 <?php include 'includes/scripts.php';?>
+<script>
+    function validation() {
+        var name = document.forms["register"]["name"].value;
+        var email = document.forms["register"]["email"].value;
+
+        if(name.length < 7) {
+
+            document.documentElement.scrollTop = 0;
+            document.getElementById('errors').hidden = false;
+            document.getElementById('error-text').innerHTML = "Name should not be less than 7 characters!";
+            return false;
+        }
+
+        var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if(!email.match(mailformat)){
+            document.documentElement.scrollTop = 0;
+            document.getElementById('errors').hidden = false;
+            document.getElementById('error-text').innerHTML = "You have entered an invalid email address!";
+            return false;
+        }
+        return true;
+    }
+</script>
 </body>
 </html>
