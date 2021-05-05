@@ -25,14 +25,17 @@
 <div class="container pb-5">
 
     <div class="row pt-4">
-        <div class="col-md-3">
-            <h1><a href="backend.php">Go To Backend</a></h1>
-        </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
             <h1><a href="frontend.php">Go To Frontend</a></h1>
+            <a href="frontend.php"><img src="uploads/frontend.png" height="470" width="470"></a>
         </div>
+
+        <div class="col-md-6">
+            <h1><a href="backend.php">Go To Backend</a></h1>
+            <a href="backend.php"><img src="uploads/backend.png" height="470" width="470"></a>
+        </div>
+
     </div>
-    <img src="uploads/1590690600-front-end-back-end-1080x608.png" height="350" width="600">
 </div>
 
 <?php include 'includes/footer.php';?>

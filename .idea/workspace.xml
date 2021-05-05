@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="93955822-5036-40d1-9c8f-a5ab1dbce163" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/includes/config.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/partial-header.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/includes/scripts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/show-products.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/signin.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/signup.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/uploads/10/samsung-galaxy-zero-0094-990x535.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/uploads/11/samsung-galaxy-zero-0094-990x535.jpg" afterDir="false" />
@@ -27,6 +24,8 @@
       <change afterPath="$PROJECT_DIR$/uploads/9/conceptd-7-ezel-pro-sp01.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/uploads/9/download.jfif" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/uploads/add-product-4-837051.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/backend.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/frontend.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/uploads/product-135-781070.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/about-us.html" beforeDir="false" afterPath="$PROJECT_DIR$/about-us.php" afterDir="false" />
@@ -43,6 +42,8 @@
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/signin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620157843712</updated>
-      <workItem from="1620157844919" duration="22486000" />
+      <workItem from="1620157844919" duration="25353000" />
     </task>
     <servers />
   </component>

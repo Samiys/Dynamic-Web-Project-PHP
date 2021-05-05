@@ -2,7 +2,8 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
-//unset($_SESSION['errmsg']);
+
+//unset($_SESSION);
 
 if(isset($_POST['submit'])) {
 
@@ -57,7 +58,7 @@ if(isset($_POST['submit'])) {
     </div>
 <?php } ?>
 
-<?php if(isset($_SESSION['logout']))
+<?php if(isset($_GET['logout']))
 {?>
     <div class="alert alert-danger">
         <button type="button" class="close" data-dismiss="alert">×</button>

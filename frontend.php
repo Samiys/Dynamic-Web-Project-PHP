@@ -78,14 +78,14 @@ include('includes/config.php');
             <div class="row">
                 <?php $query=mysqli_query($con,"select * from products");
                 while($row = mysqli_fetch_array($query)) {
-//                    $join = mysqli_query($con, "SELECT users.name AS usrname FROM users INNER JOIN products ON users.id = '".$row['id']."'");
-//                    echo ($join);
                     ?>
                 <div class="col-6 col-md-4">
                     <img class="img-fluid products mx-auto d-block img-rounded" src="uploads/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['pimage']);?>">
 <!--                    <img id="p1" class="img-fluid products mx-auto d-block img-rounded" src="img/products/Tablet.jpg" alt="Lenovo Tab" onclick="myProductDetails1()">-->
                     <p class="text-center pHeading" onclick="myProductDetails1()"><?php echo $row['pname'] ?></p>
-                    <p class="text-center" style="margin-top: -25px;"><small><strong>Seller: </strong><?php echo $row['pname'] ?></small></p>
+
+<!--                    <p class="text-center" style="margin-top: -25px;"><small><strong>Seller: </strong>--><?php //echo $user['name'] ?><!--</small></p>-->
+
                 </div>
                 <?php }?>
             </div>
