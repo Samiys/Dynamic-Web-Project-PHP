@@ -2,16 +2,16 @@
 document.getElementById("home").addEventListener("click", myHome);
 
 function myHome() {
-    location.replace("index.html")
+    location.replace("frontend.php")
 }
 function myAbout() {
-    location.replace("about-us.html")
+    location.replace("about-us.php")
 }
 function myProducts() {
     location.replace("products.html")
 }
 function myContact() {
-    location.replace("contact-us.html")
+    location.replace("contact-us.php")
 }
 function myProductDetails1() {
     window.location = 'products-details.html#product1';
